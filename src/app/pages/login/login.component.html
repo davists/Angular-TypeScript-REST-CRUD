@@ -1,0 +1,51 @@
+<body class="login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <img src="public/img/logo-grande.png" class="img-responsive center-block">
+  </div>
+  <section class="signin">
+    <!--
+    <div class="alert alerft-success alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      Uma senha temporária foi enviada para seu e-mai.
+    </div>
+    -->
+    <div *ngIf="loginError" class="alert alert-error alert-dismissible">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      {{loginError}}
+    </div>
+
+    <div class="login-box-body">
+      <p class="login-box-msg">Fazer login</p>
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group has-feedback">
+          <label>Usuário</label>
+          <input type="text" class="form-control" placeholder="Email" [(ngModel)]="email" #ctrl="ngModel" name="email" required>
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+          <label>Senha</label>
+          <input type="password" class="form-control" placeholder="Senha" [(ngModel)]="password" #ctrl="ngModel" name="password" required>
+          <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="links-aux">
+        <div class="clearfix">&nbsp;</div>
+        <a routeLink="/forgot-password" title="Esqueci minha senha" class="pull-right sque">Esqueci minha senha</a>
+        <div class="clearfix">&nbsp;</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix">&nbsp;</div>
+
+</div>
+</body>

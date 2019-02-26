@@ -1,0 +1,14 @@
+#env variable
+src/environments/environment.prod.ts
+
+# compiled output
+/dist
+/tmp
+
+# dependencies
+/node_modules
+/bower_components
+
+# IDEs and editors
+/.idea
+

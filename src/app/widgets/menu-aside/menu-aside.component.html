@@ -1,0 +1,62 @@
+<aside class="main-sidebar" xmlns="http://www.w3.org/1999/html">
+    <section class="sidebar">
+
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#"><span style="font-weight: 600; color: #fff;">{{dateNow |date:'HH:mm - dd/MM/yyyy'}}</span></a>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a href="#" routerLink="/home"><i class="fa fa-dashboard"></i> <span>Início</span></a>
+            </li>
+
+            <li class="treeview" [routerLinkActive]="['active']">
+                <a href="#">
+                    <i class="fa fa-tags"></i> <span>Prateleira</span>
+                    <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li [routerLinkActive]="['active']"><a href="#" routerLink="/categories"><i class="fa fa-folder"></i> <span>Categorias</span></a></li>
+                    <li [routerLinkActive]="['active']"><a href="#" routerLink="/products"><i class="fa fa-shopping-bag"></i> <span>Produtos</span></a></li>
+                    <li [routerLinkActive]="['active']"><a href="#" routerLink="/services"><i class="fa fa-handshake-o"></i> <span>Serviços</span></a></li>
+                </ul>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a href="#" routerLink="/promotions" ><i class="fa fa-rocket"></i> <span>Promoções</span></a>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a href="#" routerLink="/sales" ><i class="fa fa-dollar"></i> <span>Vendas</span></a>
+            </li>
+
+            <li [routerLinkActive]="['active']">
+                <a href="#" routerLink="/customers" ><i class="fa fa-users"></i> <span>Clientes</span></a>
+            </li>
+
+            <!--<li class="treeview" [routerLinkActive]="['active']">-->
+                <!--<a href="#">-->
+                    <!--<i class="fa fa-video-camera"></i> <span>Serviços de Vídeo</span>-->
+                    <!--<span class="pull-right-container">-->
+              <!--<i class="fa fa-angle-left pull-right"></i>-->
+            <!--</span>-->
+                <!--</a>-->
+                <!--<ul class="treeview-menu">-->
+                    <!--<li [routerLinkActive]="['active']"><a href="#" routerLink="/surveillance"><i class="fa fa-circle"></i> <span>Vigilância</span></a></li>-->
+                    <!--<li [routerLinkActive]="['active']"><a href="#" routerLink="/consulting"><i class="fa fa-caret-square-o-right"></i> <span>Consultoria</span></a></li>-->
+                <!--</ul>-->
+            <!--</li>-->
+
+            <!--<li [routerLinkActive]="['active']">-->
+            <!--<a href="#" routerLink="/customer/list" ><i class="fa fa-envelope"></i> <span>Mensagens de Clientes</span></a>-->
+            <!--</li>-->
+
+            <li [routerLinkActive]="['active']">
+                <a href="#" [routerLink]="['/company', logedUser.company]"><i class="fa fa-building"></i> <span>Minha Empresa</span></a>
+            </li>
+
+        </ul>
+    </section>
+</aside>

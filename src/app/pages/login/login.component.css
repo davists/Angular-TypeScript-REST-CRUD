@@ -1,0 +1,64 @@
+/*
+ * Page: Login & Register
+ * ----------------------
+ */
+.login-logo,
+.register-logo {
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+.login-logo a,
+.register-logo a {
+    color: #444;
+}
+.login-page,
+.register-page {
+    background: #d2d6de;
+}
+.login-box,
+.register-box {
+    width: 434px;
+    margin: 7% auto;
+}
+.table-responsive {
+    min-height: 0%;
+    overflow-x: hidden;
+}
+@media (max-width: 768px) {
+    .login-box,
+    .register-box {
+        width: 90%;
+        margin-top: 20px;
+    }
+    .table-responsive {
+        min-height: .01%;
+        overflow-x: auto;
+    }
+}
+.login-box-body,
+.register-box-body {
+    background: #fff;
+    padding: 20px;
+    border-top: 0;
+    color: #666;
+}
+.login-box-body .form-control-feedback,
+.register-box-body .form-control-feedback {
+    color: #777;
+}
+
+.register-box-msg {
+    margin: 0;
+    text-align: left;
+    padding: 0 20px 20px 0px;
+}
+.login-box-msg {
+    margin: 0;
+    text-align: left;
+    padding: 0px 20px 20px 0px;
+}
+.social-auth-links {
+    margin-top: -5px;
+}

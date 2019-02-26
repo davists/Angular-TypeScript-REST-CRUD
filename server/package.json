@@ -1,0 +1,16 @@
+{
+  "name": "publish",
+  "version": "1.0.0",
+  "description": "\"Just one place to publish builded rz2-checklist progress\"",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

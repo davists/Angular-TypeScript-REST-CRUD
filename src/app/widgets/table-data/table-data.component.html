@@ -1,0 +1,97 @@
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-4">
+                <input *ngIf="config.filtering" placeholder="Pesquisar"
+                       [ngTableFiltering]="config.filtering"
+                       class="form-control"
+                       (tableChanged)="onChangeTable(config)"
+                       [(ngModel)]="filterStringInput"
+                />
+            </div>
+            <div class="col-md-2">
+                <span title="Atualizar" (click)="restartTableData()" style="color: #3c8dbc; cursor: pointer">
+                    <i class="fa fa-refresh"></i>
+                </span>
+            </div>
+        </div>
+
+        <div *ngIf="!length">
+            <br><br>
+            <b>Nenhum registro encontrado!</b> <span (click)="restartTableData()" style="cursor: pointer; color: #3276b1; font-weight: 200">Voltar</span>
+        </div>
+
+    </div>
+</div>
+<br>
+
+
+<div *ngIf="length">
+
+    <table class="table dataTable" ngClass="{{config.className || ''}}"  role="grid" style="width: 100%;">
+
+        <thead>
+        <tr role="row">
+            <th *ngFor="let column of columns" ngClass="{{column.className || ''}}">{{column.title}}</th>
+            <ng-container *ngIf="tableConfig.enableDeleteButton || tableConfig.enableEditButton || tableConfig.enableCustomButton">
+                <th>Ações</th>
+            </ng-container>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let row of rows">
+            <td *ngFor="let column of columns">
+
+                <a *ngIf="column.name == 'image'" href="{{row.image}}" target="_blank">Ver Imagem</a>
+                <a *ngIf="column.name != 'image'" style="color: #0c0c0c" [routerLink]="[tableConfig.angularRouteBase, row.id]">{{getData(row, column.name)}}</a>
+
+            </td>
+
+            <ng-container *ngIf="tableConfig.enableDeleteButton || tableConfig.enableEditButton || tableConfig.enableCustomButton">
+                <td class="action-table">
+
+                    <ng-container *ngIf="tableConfig.enableCustomButton">
+                        <span title="{{tableConfig.customButton.titleName}}" (click)="actionCustom(row.id)" style="color: #3c8dbc; cursor: pointer">
+                            <i id="{{tableConfig.customButton.titleName}}" class="{{tableConfig.customButton.className}}"></i>
+                        </span>
+                    </ng-container>
+
+                    <ng-container *ngIf="tableConfig.enableEditButton">
+                        <span title="Editar" (click)="actionEdit(row.id)" style="color: #3c8dbc; cursor: pointer">
+                            <i id="edit" class="glyphicon glyphicon-edit"></i>
+                        </span>
+                    </ng-container>
+
+                    <ng-container *ngIf="tableConfig.enableDeleteButton">
+                        <span title="Excluir" (click)="actionRemove(row)" style="color: #3c8dbc; cursor: pointer">
+                            <i id="remove" class="glyphicon glyphicon-trash"></i>
+                        </span>
+                    </ng-container>
+
+                </td>
+            </ng-container>
+
+        </tr>
+        </tbody>
+
+    </table>
+
+    <pagination *ngIf="config.paging"
+                previousText="&lsaquo;"
+                nextText="&rsaquo;"
+                firstText="&laquo;"
+                lastText="&raquo;"
+                class="pagination-sm"
+                [(ngModel)]="page"
+                [totalItems]="length"
+                [itemsPerPage]="itemsPerPage"
+                [maxSize]="maxSize"
+                [boundaryLinks]="true"
+                [rotate]="false"
+                (pageChanged)="onChangeTable(config, $event)"
+                (numPages)="numPages = $event">
+    </pagination>
+
+</div>

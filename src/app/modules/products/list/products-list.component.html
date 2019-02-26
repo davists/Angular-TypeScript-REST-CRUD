@@ -1,0 +1,27 @@
+<section class="content-header">
+    <h1>
+        Cadastro de Produtos<br>
+        <small class="text-top-all">Defina aqui os produtos que serão vendidos aos seus clientes.</small>
+    </h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cad-pet">
+                <a href="#" routerLink="/products/new" class="btn btn-primary">Novo Produto</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-body" >
+                    <rest-table-data [tableConfig]="tableData"></rest-table-data>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
