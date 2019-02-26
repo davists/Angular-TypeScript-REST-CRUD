@@ -3,8 +3,9 @@ The main purpose is to give you an example of a working CRUD,
 with rest service written in typescript and a generic widget in Angular 2 for 
 list data as table with actions.
 
-src/app/services/rest.service.ts
-src/app/widgets/table-data/table-data.component.ts
+As seen here: <br>
+<b>src/app/services/rest.service.ts</b><br>
+<b>src/app/widgets/table-data/table-data.component.ts</b><br>
 
 <u>for dev mode</u> <br>
 start the app: <br>
