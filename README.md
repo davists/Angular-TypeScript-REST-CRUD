@@ -1,4 +1,4 @@
-#Typscript Angular2 Rest Products Register Example
+# Typscript Angular2 Rest Products Register Example
 The main purpose is to give you an example of a working CRUD, 
 with rest service written in typescript and a generic widget in Angular 2 for 
 list data as table with actions.
